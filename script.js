@@ -9,9 +9,21 @@ buttons.forEach(button  =>{
             }catch(error){
                 panel.value="Error";
             }
-            }else if(buttonText==='AC'){
+            }else if(buttonText==='AC'||buttonText=='C'){
                 panel.value='';
-            }else{
+            }else if(buttonText==='sqrt'){
+            const currentvalue=parseFloat(panel.value);
+                if(isNaN(currentvalue)||currentvalue<0){
+               panel.value="Error";
+                }  
+            else{
+           panel.value=Math.sqrt(currentvalue);
+            }else if(buttonText=='sin'){
+            const current=parseFloat(panel.value);
+            panel.value=Math.sin(panel.value);
+        }
+            }
+        else{
                 if(panel.value==="Error"){
                  panel.value=" ";
                 }
